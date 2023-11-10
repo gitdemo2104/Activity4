@@ -130,3 +130,6 @@ WHERE appointid = (
 	WHERE animalid = (
 		SELECT animalid 
 		FROM animals WHERE name = 'Simba'));
+        UPDATE doctors
+SET dlastname = 'Reyes-Gonzales'
+WHERE dfirstname = 'Dr. Sofia';
