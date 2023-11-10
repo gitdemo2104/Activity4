@@ -137,3 +137,14 @@ SELECT DISTINCT species
 FROM animals;
 SELECT SUM(totalamount) AS total_sales
 FROM invoices;
+SELECT COUNT(*) AS total_appointments
+FROM appointments
+WHERE animalid IN (
+    SELECT animalid
+    FROM animals
+    WHERE ownerid = (
+        SELECT ownerid
+        FROM owners
+        WHERE ofirstname = 'Maria'
+    )
+);
