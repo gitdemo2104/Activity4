@@ -33,3 +33,10 @@ CREATE TABLE doctors(
 	phone VARCHAR(15) NOT NULL,
 	email VARCHAR(100) NOT NULL
 );
+CREATE TABLE invoices(
+	invoiceid INT PRIMARY KEY,
+	paymentdate TIME,
+	totalamount NUMERIC(10,2) NOT NULL,
+	appointid INT,
+	foreign key (appointid) references appointments(appointid)
+);
